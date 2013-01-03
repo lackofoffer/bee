@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>FLASH采集模块：设置导库规则 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/bg.gif);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<script>
+currObj = "uuuu";
+function getActiveText(obj)
+{
+	currObj = obj;
+}
+
+function addTag(code)
+{
+	addText(code);
+}
+
+function addText(ibTag)
+{
+	var isClose = false;
+	var obj_ta = currObj;
+
+	if (obj_ta.isTextEdit)
+	{
+		obj_ta.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+
+		if((sel.type == "Text" || sel.type == "None") && rng != null)
+		{
+			rng.text = ibTag;
+		}
+
+		obj_ta.focus();
+
+		return isClose;
+	}
+	else
+		return false;
+}	
+//-->
+</script>
+</head>
+
+<body>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="../login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<form action="admin.php?action=setDB" method="post" name="form1" metdod="post">
+  <table width="700" border="0" align="center" cellpadding="0" cellspacing="1" class="k_all" widtd="600">
+    <tr>
+      <td width="83" align="center" class="font2" scope="row" widtd="129">操作</td>
+      <td width="83" align="center" class="font2" scope="row" widtd="129">ID</td>
+      <td width="290" height="24" align="center" class="font2" scope="row" widtd="129">字段名</td>
+      <td width="236" align="center" class="font2" scope="row" widtd="129">对应字段</td>
+    </tr>
+    {fieldRow}
+    
+    <tr>
+      <td height="24" colspan="4" align="center" class="font2" scope="row"><span class="k_updown">可用标签:<FONT style="CURSOR: hand" onclick="addTag('[title]')"><strong>[标题]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[image]')"><strong>[图片]</strong></FONT><FONT style="CURSOR: hand" onclick="addTag('[flash]')"><strong>[动画]</strong></FONT><FONT style="CURSOR: hand" onclick="addTag('[content]')"><strong>[简介]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[author]')"><strong>[作者]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[sourse]')"><strong>[来源]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[time]')" alt="插入[来源]标签"><strong>[时间戳]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[time1]')"><strong>[时间格式1]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[time2]')"><strong>[时间格式2]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[keyword]')"><strong>[关键字]</strong></font></span></td>
+    </tr>
+    <tr>
+      <td colspan="4" align="center" scope="row"><input name="cid" type="hidden" id="cid" value="{cid}">
+          <input type="submit" name="Submit" value="提交">
+          <input type="reset" name="Submit2" value="重置"></td>
+    </tr>
+  </table>
+</form>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup">
+  <tr>
+    <td height="80"><div align="center">
+        <table width="500" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+            <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+            <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+            <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+            <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+          </tr>
+        </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>BBS采集模块：内容浏览 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title>
+<script language="javascript">
+var flag=0;
+function checkall(){ 
+    for(var i = 0; i < document.myform.elements.length; i++) {
+	   var e = document.myform.elements[i];
+	   if(e.type=="checkbox"){ 
+	       if(flag==0){
+	          e.checked=true;
+			   }
+			   else{
+			     e.checked=false;
+			   }
+	   }
+	}
+	if(flag==0)
+	 flag=1;
+	 else flag=0;
+}
+function commend(){
+ for(var i = 0; i < document.myform.elements.length; i++) {
+	   var e = myform.elements[i];
+	   if(e.type=="checkbox"){  
+	       if(e.checked==true){
+	          return confirm("确定要删除您已经选中的信息");
+			}
+	   }
+  }
+  alert("最少要选择一条信息才能进行此操作");
+  return false;
+     
+}
+</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/bg.gif);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.style2 {color: #FFFFFF}
+.STYLE4 {color: #FF0000}
+-->
+</style></head>
+
+<body>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="../login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<form action="mdelete.php?cid={cid}" method="post" name="myform">
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#EBEBEB">
+  <tr >
+    <td height="20" colspan="3" align="center" class="k_all"><span class="font2">选中<font 
+      style="CURSOR: hand; COLOR: red" onclick="checkall()">（全选）</font></span> </td>
+    <td width="54" align="center" class="k_all"><span class="font2">ID</span></td>
+    <td width="404" align="center" class="k_all"><span class="font2">标题</span></td>
+    <td width="153" align="center" class="k_all"><span class="font2">时间</span></td>
+  </tr>
+  {link}
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup">
+  <tr>
+    <td height="20" align="center" class="font2" scope="row"> <br>
+一共入库{allmsg}条信息 总共{allpage}页 当前是{whichpage}页 {split_page}<br>
+ <br>
+    <input type="button" name="Submit" value="显示标题为空信息" onclick="document.location.href='shownull.php?action=title&cid={cid}'"> <input type="button" name="Submit" value="显示内容为空信息" onclick="document.location.href='shownull.php?action=content&cid={cid}'"> <input type="button" name="Submit" value="显示作者为空信息" onclick="document.location.href='shownull.php?action=author&cid={cid}'"> <input type="button" name="Submit" value="显示来源为空信息" onclick="document.location.href='shownull.php?action=sourse&cid={cid}'"> <br>
+    <br>
+    <input type="submit" name="Submit" value="删除选中" onClick="return commend()"></td>
+  </tr>
+  <tr>
+    <td height="20" scope="row"></td>
+  </tr></form>
+</table>
+
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+

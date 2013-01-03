@@ -1,0 +1,366 @@
+<title>编辑规则 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title>
+<script>
+	var tagString="{tagString}";
+	function setChecbox(){
+	
+		if(tagString==1){
+			document.myform.tagall.checked=true;
+		}
+		else{ 	
+			var TagArray=tagString.split(',');
+			for(var i = 0; i < document.myform.elements.length; i++) {
+	     var ee = document.myform.elements[i];
+				if(ee.type=="checkbox"){
+					for(key in TagArray){
+						if(ee.value==TagArray[key]){
+	             ee.checked=true;
+	             break;
+	            }
+	        }
+			 }
+	     
+	    } 
+			
+		}
+	}
+	function checkall(flag){ 
+	  if(flag==1){
+	  	document.myform.tagall.checked=false;
+	  	return true;
+	  }
+	  for(var i = 0; i < document.myform.elements.length; i++) {
+	   var ee = document.myform.elements[i];
+	   if(ee.type=="checkbox"&&ee.name!="tagall"&&ee.name!="iscreatedir"){
+	   	   if(document.myform.tagall.checked==true)
+	         ee.checked=false;
+	   }
+	} 
+}
+currObj = "uuuu";
+function getActiveText(obj)
+{
+	currObj = obj;
+}
+
+function addTag(code)
+{
+	addText(code);
+}
+
+function addText(ibTag)
+{
+	var isClose = false;
+	var obj_ta = currObj;
+
+	if (obj_ta.isTextEdit)
+	{
+		obj_ta.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+
+		if((sel.type == "Text" || sel.type == "None") && rng != null)
+		{
+			rng.text = ibTag;
+		}
+
+		obj_ta.focus();
+
+		return isClose;
+	}
+	else
+		return false;
+}	
+//-->
+</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/bg.gif);
+}
+.STYLE1 {font-weight: bold}
+-->
+</style><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<form action="cedit.php?action=setEdit" method="post" name="myform" id="myform" metdod="post">
+  <table width="700" height="1000" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#615E81" class="k_no_-19">
+    <tr bgcolor="#FCFCFC">
+      <td height="8" colspan="4" align="center" scope="row"></td>
+    </tr>
+    <tr>
+      <td height="25" colspan="4" align="center" background="images/title_bar_middle.jpg" scope="row"><span class="font1">文章分类</span></td>
+    </tr>
+    <tr>
+      <td width="79" height="20" align="center" bgcolor="#EBEBEB" class="font2" scope="row">站点</td>
+      <td width="612" height="20" bgcolor="#FCFCFC" colspan="3"> <span class="font2">{cname}</span>      <input name="cid" type="hidden" id="cid" value="{cid}"></td>
+    </tr>
+    <tr>
+      <td height="25" colspan="4" align="center" background="images/title_bar_middle.jpg" scope="row"><span class="font1">文章列表</span></td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#EBEBEB" class="font2" scope="row">URL</td>
+      <td bgcolor="#FCFCFC" colspan="3"> 　<span class="font2">多条特殊的链接</span>      <textarea name="out_url_many" cols="42" rows="5" class="k_all-font" id="out_url_many">{outer_url_many}</textarea>
+      <br>
+      <br>
+      　<span class="font2">有规律的链接</span>　 
+      <input name="out_url" type="text" class="k_all-font" id="out_url" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)" value="{outer_url}" size="44">
+      <br>
+      <br>
+      <span class="font2">参数从</span>      <input name="out_low" type="text" class="k_all-font" id="out_low2" value="{out_low}" size="2">
+      <span class="font2">到</span>      <input name="out_upp" type="text" class="font2" id="out_upp2" value="{out_upp}" size="2"> <span class="font2">步长</span> <input name="step" type="text" class="k_all-font" id="out_upp" size="2" value="{step}"> <span class="font2">可用标签:<FONT style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong></strong></FONT></span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT> </td>
+    </tr>
+    <tr>
+      <td rowspan="6" align="center" bgcolor="#EBEBEB" class="font2" scope="row">链接</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><font class="font2" style="CURSOR: hand" onclick="addTag('[linkrang]')" alt="插入[链接范围]标签"><strong>[链接区域]</strong></font> <font class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></font></td>
+    </tr>
+    <tr>
+      <td height="24" colspan="3" bgcolor="#FCFCFC">　
+      <textarea name="linkrang" cols="60" rows="5" class="k_all-font" id="linkrang" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{linkrang}</textarea></td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><font class="font2" style="CURSOR: hand" onclick="addTag('[link]')" alt="插入[连接]标签"><strong>[链接]</strong></font> <font class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></font> <font class="font2" style="CURSOR: hand" onclick="addTag('[title]')" alt="插入[标题]标签"><strong>[标题]</strong></font></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　
+          <textarea name="link" cols="60" rows="5" class="k_all-font" id="link" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{link}</textarea> 
+          <span class="font2">间隔时间
+          <input name="metatime" type="text" id="metatime" value="{metaTime}" size="1" /> 
+      秒</span> </td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#FCFCFC" colspan="3"><span class="font2">将链接中
+          <input name="linkReplaceS" type="text" class="k_all-font" id="linkReplaceS"  value="{linkReplaceS}" size="57" />
+      </span></td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#FCFCFC" colspan="3"><span class="font2">
+        　替换成
+            <input name="linkReplaceT" type="text" class="k_all-font" id="linkReplaceT"  value="{linkReplaceT}" size="57" /></span></td>
+    </tr>
+	<tr align="center">
+      <td height="25" colspan="4" background="images/title_bar_middle.jpg" scope="row"><span class="font1">文章内容</span></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">标题</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[title]')" alt="插入[标题]标签"><strong>[标题]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="title" cols="60" rows="5" class="k_all-font" id="textarea" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{title}</textarea></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">内容</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[content]')" alt="插入[内容]标签"><strong>[内容]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="content" cols="60" rows="5" class="k_all-font" id="textarea2" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{content}</textarea></td>
+    </tr>
+	<tr class="font2">
+	<td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">保留标签<br /><input name="tagall" type="checkbox" value="1" id="tagall" onclick="checkall(0)"/>
+  全部</td>
+      <td height="30" colspan="3" bgcolor="#FCFCFC">　
+      	
+        <input type="checkbox" name="tag[]" value="[img]" onclick="checkall(1)"/>
+        IMG
+        <input type="checkbox" name="tag[]" value="[a]" onclick="checkall(1)"/>
+          A
+        <input type="checkbox" name="tag[]" value="[script]" onclick="checkall(1)"/>
+        SCRIPT
+        <input type="checkbox" name="tag[]" value="[iframe]" onclick="checkall(1)"/>
+        IFARME
+        <input type="checkbox" name="tag[]" value="[tr]" onclick="checkall(1)"/>
+        TR
+        <input type="checkbox" name="tag[]" value="[td]" onclick="checkall(1)"/>
+        TD
+        <input type="checkbox" name="tag[]" value="[object]" onclick="checkall(1)"/>
+        OBJECT
+		<input type="checkbox" name="tag[]" value="[param]" onclick="checkall(1)"/>
+        PARAM
+        <input type="checkbox" name="tag[]" value="[table]" onclick="checkall(1)"/>
+        TABLE
+        <input type="checkbox" name="tag[]" value="[applet]" onclick="checkall(1)"/>
+APPLET</td>
+    </tr>
+    <tr class="font2">
+      <td height="30" colspan="3" bgcolor="#FCFCFC">　
+        <input type="checkbox" name="tag[]" value="[br]" onclick="checkall(1)"/>
+BR
+  <input type="checkbox" name="tag[]" value="[font]" onclick="checkall(1)"/>
+  FONT
+  <input type="checkbox" name="tag[]" value="[span]" onclick="checkall(1)"/>
+  SPAN
+  <input type="checkbox" name="tag[]" value="[form]" onclick="checkall(1)"/>
+  FORM
+  <input type="checkbox" name="tag[]" value="[body]" onclick="checkall(1)"/>
+  BODY
+  <input type="checkbox" name="tag[]" value="[head]" onclick="checkall(1)"/>
+  HEAD
+  <input type="checkbox" name="tag[]" value="[link]" onclick="checkall(1)"/>
+  LINK
+  <input type="checkbox" name="tag[]" value="[meta]" onclick="checkall(1)"/>
+  META
+  <input type="checkbox" name="tag[]" value="[html]" onclick="checkall(1)"/>
+  HTML
+      <input type="checkbox" name="tag[]" value="[p]" onclick="checkall(1)"/>
+  P
+  <input type="checkbox" name="tag[]" value="[div]" onclick="checkall(1)"/>
+DIV  </td>
+	</tr>
+	<tr>
+	<td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">内容替换<br />
+      <br />
+原内容</td>
+      <td height="24" colspan="3" bgcolor="#FCFCFC">　<span class="font2">可用标签:<font style="CURSOR: hand" onclick="addTag('[ReplaceContent]')" alt="插入[替换区域]标签"><strong>[替换区域]</strong></font> <font style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量] </strong></font><font style="CURSOR: hand" onclick="addTag('[replace]')" alt="插入[增加替换]标签"><strong>[增加替换]</strong></font></span> </td>
+    </tr>
+    <tr>
+      <td height="90" colspan="3" bgcolor="#FCFCFC">　
+      <textarea name="contentReplaceS" cols="60" rows="5" class="k_all-font" id="contentReplaceS" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{contentReplaceS}</textarea></td>
+	</tr>
+	<tr>
+	<td align="center" bgcolor="#EBEBEB" class="font2" scope="row">内容替换<br />
+      <br />
+替换为</td>
+      <td height="90" colspan="3" bgcolor="#FCFCFC">　
+      <textarea name="contentReplaceT" cols="60" rows="5" class="k_all-font" id="contentReplaceT" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{contentReplaceT}</textarea></td>
+	</tr>
+    <tr>
+      <td rowspan="4" align="center" bgcolor="#EBEBEB" class="font2" scope="row">内容分页</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[innerpage]')" alt="插入[内容分页]标签"><strong>[分页]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[innerrang]')" alt="插入[变量]标签"><strong>[分页区域]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　
+      <textarea name="innerpage" cols="60" rows="5" class="k_all-font" id="textarea5" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{inner_page}</textarea></td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#FCFCFC" colspan="3"><span class="font2">将分页链接中
+        <input name="InnerLinkReplaceS" type="text" class="k_all-font" id="InnerLinkReplaceS"  value="{InnerLinkReplaceS}" size="53" />
+      </span></td></tr>
+    <tr>
+      <td height="24" bgcolor="#FCFCFC" colspan="3"><span class="font2">　　　替换成 
+          <input name="InnerLinkReplaceT" type="text" class="k_all-font" id="InnerLinkReplaceT"  value="{InnerLinkReplaceT}" size="53" />
+      </span></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">作者</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[author]')" alt="插入[作者]标签"><strong>[作者]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="author" cols="60" rows="5" class="k_all-font" id="textarea3" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{author}</textarea></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">来源</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[sourse]')" alt="插入[来源]标签"><strong>[来源]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="sourse" cols="60" rows="5" class="k_all-font" id="textarea4" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{sourse}</textarea></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">过滤</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">可用标签:</span><FONT class="font2" style="CURSOR: hand" onclick="addTag('[filtrate]')" alt="插入[过滤]标签"><strong>[增加过滤]</strong></font> <font class="font2" style="CURSOR: hand" onclick="addTag('[filtraterang]')" alt="插入[区域过滤]标签"><strong>[区域过滤]</strong></font> <FONT class="font2" style="CURSOR: hand" onclick="addTag('[variable]')" alt="插入[变量]标签"><strong>[变量]</strong></FONT></td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="filtrate" cols="60" rows="5" class="k_all-font" id="filtrate"  onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{filtrate}</textarea></td>
+    </tr>
+  <tr class="font2">
+  <td rowspan="3" align="center" bgcolor="#EBEBEB" class="font2" scope="row">写入内容</td>
+      <td height="24" colspan="3" bgcolor="#FCFCFC">　
+        <input type="radio" name="insertPosition" value="1" {addPosition1} />
+      文章内容最前边
+        <input type="radio" name="insertPosition" value="2" {addPosition2} />
+      文章内容最后边
+        <input type="radio" name="insertPosition" value="3" {addPosition3} />
+      随机</td>
+    </tr>
+    <tr>
+      <td height="90" colspan="3" bgcolor="#FCFCFC">　<textarea name="insert" cols="60" rows="5" class="k_all-font" id="textarea6">{insert}</textarea></td>
+  </tr>
+    <tr class="font2">
+      <td height="24" colspan="3" bgcolor="#FCFCFC">可写入任意内容，达到简单防采或被采集后让对方免费帮您网站做广告；^_^</td>
+    </tr>
+  
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">COOKIE</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">请按照这样的格式写 cookiename=cookievalue 多个之间用，分开</span>  </td>
+    </tr>
+    <tr>
+      <td height="90" bgcolor="#FCFCFC" colspan="3">　<textarea name="cookie" cols="60" rows="5" class="k_all-font" id="cookie"  onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{cookie}</textarea></td>
+    </tr>
+    
+    <tr>
+      <td rowspan="2" align="center" bgcolor="#EBEBEB" class="font2" scope="row">REFERER</td>
+      <td height="24" bgcolor="#EBEBEB" colspan="3">　<span class="font2">原来调用的地址</span></td>
+    </tr>
+    <tr>
+      <td height="30" bgcolor="#FCFCFC" colspan="3">　<input name="referer" type="text" class="k_all-font" id="referer" value="{referer}" size="62" /></td>
+    </tr>
+    
+    <tr>
+      <td height="30" align="center" bgcolor="#EBEBEB" class="font2" scope="row">UTF8</td>
+      <td bgcolor="#FCFCFC" class="font2" colspan="3">　
+        <input type="radio" name="isutf8" value="1" {checkyes}/>
+      是
+      <input name="isutf8" type="radio" value="0" {checkno} />
+      不是 采集的目标页是不是UTF-8（UNICODE）的字符集;</td>
+    </tr>
+    <tr>
+      <td height="30" align="center" bgcolor="#EBEBEB" class="font2" scope="row">图片保存目录</td>
+      <td bgcolor="#FCFCFC" colspan="3">　<input name="img_dir" type="text" class="k_all-font" id="img_dir" value="{img_dir}" size="62">        　
+      <span class="font2">系统自动添加目录</span>      <input name="iscreatedir" type="checkbox" id="iscreatedir" value="1"{ischecked}>      </td>
+    </tr>
+    <tr>
+      <td height="30" colspan="4" align="left" bgcolor="#FFFFFF" class="font2" scope="row">图片目录说明：如果使用./ 代表小蜜蜂当前目录，那么采集完成以后，必须把图片目录移动到CMS/BBS对应目录，否则图片不能显示；如果使用/ 代表您域名的WEB根目录，可将保存目录直接设置为CMS/BBS的图片/附件目录，这样采集完成后无需移动图片/flash文件。</td>
+    </tr>
+    <tr bgcolor="#EBEBEB" background="./images/title_bar_middle.jpg">
+      <td height="32" colspan="4" align="center" scope="row"><input name="Submit" type="submit" class="font2" value="提交">
+      <input name="Submit2" type="reset" class="font2" value="重置"></td>
+    </tr>
+  </table>
+<br />
+</form>
+<br />
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup_-35">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="k_noup_-35">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>
+<script>setChecbox();</script>
+

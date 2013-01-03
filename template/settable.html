@@ -1,0 +1,108 @@
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_validateForm() { //v4.0
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' must contain an e-mail address.\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+//-->
+</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/bg.gif);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style><title>数据库直导规则设置 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<table width="700" height="12" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC">
+  <tr>
+    <td></td>
+  </tr>
+</table>
+<form action="admin.php?action=setDatabase" method="post" name="form1" metdod="post">
+  <table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#615E81" class="k_no_-19" widtd="600">
+    <tr>
+      <td width="31" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">操作</td>
+      <td width="83" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">表名</td>
+      <td width="45" height="24" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">行数</td>
+      <td width="62" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">数据长度</td>
+      <td width="137" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">创建时间</td>
+      <td width="154" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">更新时间</td>
+      <td width="172" align="center" bgcolor="#EBEBEB" class="font2" scope="row" widtd="129">说明</td>
+    </tr>
+	
+	{row}
+    <tr bgcolor="#FCFCFC">
+      <td colspan="7" scope="row"><span class="font2">{cname}</span>      <input name="cid" type="hidden" id="cid" value="{cid}"></td>
+    </tr>
+    <tr bgcolor="#FCFCFC">
+      <td colspan="7" align="center" bgcolor="#EBEBEB" scope="row"><input name="Submit" type="submit" class="font2" onClick="MM_validateForm('host','','R','username','','R','database','','R','table','','R','password','','R');return document.MM_returnValue" value="下一步">
+      <input name="Submit2" type="reset" class="font2" value="取消"></td>
+    </tr>
+  </table>
+</form>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup_-30">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="k_noup_-30">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>
+

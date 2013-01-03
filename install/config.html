@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>安装-设置数据库配置</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/bg.gif);
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<body>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<form action="install.php?action=createDatabase" method="post" name="form1" metdod="post">
+  <table width="700" border="0" align="center" cellpadding="2" cellspacing="1" class="k_all">
+    <tr>
+      <td width="90" height="30" class="font2">数据库服务器</td>
+      <td width="185"><input name="host" type="text" class="k_all-font" id="host3" value="localhost"></td>
+      <td width="409"><font class="font2">数据库服务器地址, 一般为 localhost</font></td>
+    </tr>
+    <tr>
+      <td height="30" class="font2">数据库用户名</td>
+      <td><input name="username" type="text" class="k_all-font" id="username2" value="root">　      </td>
+      <td><font class="font2">数据库账号用户名</font></td>
+    </tr>
+    <tr>
+      <td height="30" class="font2">数据库密码</td>
+      <td><input name="password" type="password" class="k_all-font" id="password3">　      </td>
+      <td><font class="font2">数据库账号密码</font></td>
+    </tr>
+    <tr>
+      <td height="30" class="font2">数据库名</td>
+      <td><input name="database" type="text" class="k_all-font" id="database2">　      </td>
+      <td><font class="font2">数据库名称</font></td>
+    </tr>
+    <tr>
+      <td height="30" class="font2">表名前缀</td>
+      <td><input name="prefix" type="text" class="k_all-font" id="prefix4" value="bc_">　      </td>
+      <td><font class="font2">同一数据库安装多个“小蜜蜂”时使用</font></td>
+    </tr>
+    <tr>
+      <td height="30" class="font2">安装访问路径</td>
+      <td><input name="hostpath" type="text" class="k_all-font" id="hostpath4">　      </td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="30" colspan="3" class="font2">安装路径设置说明：<font class="font2">假如您安装的地址是<font color="#FF0000">http://127.0.0.1/xiaomifeng/</font>install.php?action=setConfig　请录入install.php以前的完整路径，包括最后的<font color="#FF0000">/</font></font>。即前面的红色部分。</td>
+    </tr>
+    <tr>
+      <td height="30" colspan="3" class="font2"><font color="#FF0000">注意：</font>如果要使用BBS采集模块，请在本基础系统安装完成以后，单独执行BBS模块安装程序；请看解压目录中说明文件。</td>
+    </tr>
+    <tr bgcolor="#999999">
+      <td height="60" colspan="3"><div align="center">
+          <input name="Submit" type="submit" class="font2" value="提交">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<input name="Submit2" type="reset" class="font2" value="取消">
+      </div></td>
+    </tr>
+  </table>
+</form>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_all">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+</body>
+</html>

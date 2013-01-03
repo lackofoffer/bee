@@ -1,0 +1,172 @@
+BODY {
+	MARGIN: 5px; FONT-FAMILY: "宋体"; BACKGROUND-COLOR: #ffffff
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #090909; WORD-BREAK: break-all
+}
+A:link {
+	COLOR: #0000aa; TEXT-DECORATION: underline
+}
+A:visited {
+	COLOR: #0000aa; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+TEXTAREA {
+	BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; SCROLLBAR-FACE-COLOR: #e2e4e4; FONT-SIZE: 12px; SCROLLBAR-HIGHLIGHT-COLOR: #ffffff; BORDER-LEFT: #cccccc 1px solid; SCROLLBAR-SHADOW-COLOR: #b0b0b0; SCROLLBAR-3DLIGHT-COLOR: #e4e4e4; LINE-HEIGHT: 20px; SCROLLBAR-ARROW-COLOR: #003399; SCROLLBAR-TRACK-COLOR: #f3f3f3; BORDER-BOTTOM: #cccccc 1px solid; SCROLLBAR-DARKSHADOW-COLOR: #ffffff; BACKGROUND-COLOR: #ffffff
+}
+.title {
+	FONT-SIZE: 14px
+}
+.bignum {
+	FONT-SIZE: 16px
+}
+.boxblue {
+	BORDER-RIGHT: #526e8c 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #526e8c 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; MARGIN: 0px 0px 9px; BORDER-LEFT: #526e8c 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #526e8c 1px solid
+}
+A.none:link {
+	COLOR: #0000aa; TEXT-DECORATION: none
+}
+A.none:visited {
+	COLOR: #0000aa; TEXT-DECORATION: none
+}
+A.none:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.comm:link {
+	COLOR: #1a1ad1; TEXT-DECORATION: underline
+}
+A.comm:visited {
+	COLOR: #1a1ad1; TEXT-DECORATION: underline
+}
+A.comm:hover {
+	COLOR: #1a1ad1; TEXT-DECORATION: underline
+}
+.boxblueu {
+	BORDER-RIGHT: #526e8c 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #526e8c 1px; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 0px 0px 9px; BORDER-LEFT: #526e8c 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #526e8c 1px solid
+}
+.boxgray {
+	BORDER-RIGHT: #ffcc66 1px solid; BORDER-TOP: #ffcc66 1px solid; BORDER-LEFT: #ffcc66 1px solid; BORDER-BOTTOM: #ffcc66 1px solid; BACKGROUND-COLOR: #fffdf0
+}
+.box_blue {
+	BORDER-RIGHT: #b4d0dc 1px solid; BORDER-TOP: #b4d0dc 1px solid; BORDER-LEFT: #b4d0dc 1px solid; BORDER-BOTTOM: #b4d0dc 1px solid; BACKGROUND-COLOR: #f2fbff
+}
+.box_gray {
+	BORDER-RIGHT: #c4c4c4 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #c4c4c4 1px solid; PADDING-LEFT: 6px; PADDING-BOTTOM: 6px; BORDER-LEFT: #c4c4c4 1px solid; CURSOR: hand; WORD-BREAK: break-all; PADDING-TOP: 6px; BORDER-BOTTOM: #c4c4c4 1px solid; BACKGROUND-COLOR: #fcfcfc
+}
+.line110 {
+	LINE-HEIGHT: 17px
+}
+.boxtgray {
+	BORDER-RIGHT: #8c8c8c 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #8c8c8c 3px solid; PADDING-LEFT: 2px; PADDING-BOTTOM: 2px; MARGIN: 0px 0px 15px; BORDER-LEFT: #8c8c8c 1px solid; PADDING-TOP: 2px; BORDER-BOTTOM: #8c8c8c 1px solid
+}
+.inputfmt {
+	BORDER-RIGHT: #a5a5a5 1px solid; BORDER-TOP: #a5a5a5 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: #a5a5a5 1px solid; COLOR: #090909; PADDING-TOP: 3px; BORDER-BOTTOM: #a5a5a5 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 20px
+}
+.menuinputfmt {
+	BORDER-RIGHT: #a5a5a5 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #a5a5a5 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; PADDING-BOTTOM: 2px; BORDER-LEFT: #a5a5a5 1px solid; COLOR: #333333; PADDING-TOP: 2px; BORDER-BOTTOM: #a5a5a5 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 18px
+}
+.font12 {
+	FONT-SIZE: 12px; COLOR: #333333
+}
+.formfmt {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+.btnfmt {
+	BORDER-RIGHT: #9c9c9c 1px ridge; PADDING-RIGHT: 0px; BORDER-TOP: #9c9c9c 1px ridge; PADDING-LEFT: 0px; FONT-SIZE: 12px; PADDING-BOTTOM: 0px; BORDER-LEFT: #9c9c9c 1px ridge; COLOR: #090909; PADDING-TOP: 2px; BORDER-BOTTOM: #9c9c9c 1px ridge; FONT-FAMILY: "宋体"; HEIGHT: 20px; BACKGROUND-COLOR: #dddddd
+}
+A.menu:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.menu:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A.text:link {
+	COLOR: #090909; TEXT-DECORATION: none
+}
+A.text:visited {
+	COLOR: #090909; TEXT-DECORATION: none
+}
+A.text:hover {
+	COLOR: #ff0000
+}
+.line120 {
+	LINE-HEIGHT: 19px
+}
+A.text2:link {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.text2:visited {
+	COLOR: #666666; TEXT-DECORATION: none
+}
+A.text2:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}
+.boxupline {
+	BORDER-RIGHT: #969696; BORDER-TOP: #969696 1px solid; PADDING-BOTTOM: 5px; BORDER-LEFT: #969696; PADDING-TOP: 15px; BORDER-BOTTOM: #969696
+}
+.boxblue2 {
+	BORDER-RIGHT: #d2dfea 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #d2dfea 1px solid; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; MARGIN: 0px 0px 9px; BORDER-LEFT: #d2dfea 1px solid; LINE-HEIGHT: 19px; PADDING-TOP: 1px; BORDER-BOTTOM: #d2dfea 1px solid
+}
+.btnfmt2 {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_back_01.gif); BORDER-LEFT: 0px; WIDTH: 65px; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: 0px; FONT-FAMILY: "宋体"; HEIGHT: 21px
+}
+.btnfmt4 {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(../images/btn_back_02.gif); BORDER-LEFT: 0px; WIDTH: 75px; COLOR: #ffffff; PADDING-TOP: 2px; BORDER-BOTTOM: 0px; FONT-FAMILY: "宋体"; HEIGHT: 21px
+}
+.inputfmt2 {
+	BORDER-RIGHT: #a5a5a5 1px solid; BORDER-TOP: #a5a5a5 1px solid; PADDING-LEFT: 3px; FONT-SIZE: 12px; BORDER-LEFT: #a5a5a5 1px solid; COLOR: #090909; PADDING-TOP: 3px; BORDER-BOTTOM: #a5a5a5 1px solid; FONT-FAMILY: "宋体"; BACKGROUND-COLOR: #ffffff
+}
+.kuang7 {
+	BORDER-RIGHT: #a6c0da 1px solid; BORDER-TOP: #a6c0da 1px solid; BORDER-LEFT: #a6c0da 1px solid; BORDER-BOTTOM: #a6c0da 1px solid
+}
+.u_kuang_D1D3D4 {
+	BORDER-RIGHT: #d1d3d4 1px solid; BORDER-LEFT: #d1d3d4 1px solid; BORDER-BOTTOM: #d1d3d4 1px solid
+}
+.shadow_blak {
+	FONT-SIZE: 14px; FILTER: DropShadow(Color=#333333, OffX=1, OffY=1, Positive=1); COLOR: #ffffff
+}
+.shadow {
+	FILTER: DropShadow(Color=#333333, OffX=1, OffY=1, Positive=1); COLOR: #ffffff
+}
+.shadow_white {
+	FONT-SIZE: 14px; FILTER: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1); COLOR: #333333
+}
+.shadow_image {
+	FILTER: DropShadow(Color=#c2c2c2, Direction=135)
+}
+.glow_text {
+	FILTER: Glow(Color=#ffffff, Strength=2)
+}
+.line_th {
+	TEXT-DECORATION: line-through
+}
+.imgbox {
+	BORDER-RIGHT: #666 1px solid; BORDER-TOP: #ccc 1px solid; BORDER-LEFT: #ccc 1px solid; BORDER-BOTTOM: #666 1px solid
+}
+H1 {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; FONT-WEIGHT: normal; FONT-SIZE: 26px; PADDING-BOTTOM: 3px; MARGIN: 3px; COLOR: #000000; PADDING-TOP: 3px; FONT-FAMILY: "黑体", Arial
+}
+.Shadow_table {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; FILTER: progid:DXImageTransform.Microsoft.DropShadow(color=#efefef,offX=3,offY=5,positives=false); BORDER-LEFT: #c0c0c0 1px solid; BORDER-BOTTOM: #c0c0c0 1px solid; BACKGROUND-COLOR: #ffffff
+}
+#idnum {
+	MARGIN: 110px 0px 0px 87px
+}
+.hs10ct {
+	color: #FF0000;
+	font-weight: bold;
+	font-size: 10pt;
+}
+.biaoti30 {
+	font-size: 30px;
+	color: #FFFFFF;
+}
+.lsct {
+	COLOR:#009900;
+	font-weight: bold;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>测试提取内容列表 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style></head>
+
+<body>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="20" bgcolor="#FCFCFC" scope="row"></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#615E81">
+
+  <tr bgcolor="#FCFCFC">
+    <td height="24" colspan="6" scope="row"> 　<span class="font2"><strong>采集报告</strong>：</span> <span class="font2">标题 {titleReport}| 内容 {contentReport}| 作者 {authorReport}| 来源 {sourseReport} </span></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="24" colspan="6" scope="row"> 　<span class="font2"><strong>采集操作</strong>：</span> <a href="testcaiji.php?cid={cid}" class="font2"> 采集测试</a> <a href="clink.php?cid={cid}" class="font2">采集链接</a> <a href="cstart.php?cid={cid}" class="font2">采集内容</a> <a href="cimage.php?cid={cid}" class="font2">采集图片</a> <a href="browse.php?action=showlist&&cid={cid}" class="font2">内容浏览</a> <a href="cflash.php?cid={cid}" class="font2">采集动画</a> <a href="{link_sendpost}" class="font2">开始导库</a></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="24" colspan="6" scope="row"> 　<span class="font2"><strong>采集管理</strong>：</span> <a href="ccopy.php?cid={cid}" class="font2"> 复制规则</a> <a href="cedit.php?cid={cid}" class="font2">编辑规则</a> <a href="cdelete.php?cid={cid}" class="font2" onclick="return confirm('确定要从数据库中删除该规则');">删除规则</a> <a href="sendout.php?cid={cid}" class="font2">导出规则</a> <a href="sendin.php?cid={cid}" class="font2">导入规则</a> <a href="{link_dbset}" class="font2">导库设置</a> <a href="{link_dbadmin}" class="font2">导库管理</a></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="24" colspan="6" align="center" scope="row"><span class="font2">测试内容</span></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="30" colspan="4" align="center" scope="row"><span class="font2"><strong>{title}</strong></span></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="20" colspan="4" class="font2" scope="row">&nbsp;{content}</td>
+  </tr>
+  <tr>
+    <td background="images/title_bar_middle.jpg" height="28" colspan="4" align="center" scope="row"><span class="font1">文章说明</span></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td width="83" height="20" align="center" class="font2" scope="row">文章来源</td>
+    <td width="324" height="20" scope="row">　<span class="font2">&nbsp;{sourse}</span></td>
+    <td width="92" height="20" align="center" class="font2" scope="row">文章作者</td>
+    <td width="191" height="20" scope="row">　<span class="font2">&nbsp;{author}</span></td>
+  </tr>
+  <tr bgcolor="#FCFCFC">
+    <td height="20" align="center" class="font2" scope="row">原始地址</td>
+    <td height="20" scope="row">　<a href="{url}" class="font2">&nbsp;{url}</a></td>
+    <td height="20" align="center" class="font2" scope="row">采集时间</td>
+    <td height="20" scope="row">　<span class="font2">&nbsp;{time}</span></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="k_lr">
+  <tr>
+    <td height="20" bgcolor="#FCFCFC" scope="row"></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
+

@@ -1,0 +1,106 @@
+.title {
+	font-size: 24px;
+	font-style: normal;
+	font-weight: bolder;
+	color: #ADAAAD;
+}
+.k_all {
+	border: 1px solid #615E81;
+}
+.k_noup {
+	border-right: 1px solid #615E81;
+	border-bottom: 1px solid #615E81;
+	border-left: 1px solid #615E81;
+}
+.font1 {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.font2 {
+
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	color: #4B4E4B;
+}
+.k_noup_-19 {
+	border-right: 1px solid #615E81;
+	border-bottom: 1px solid #615E81;
+	border-left: 1px solid #615E81;
+	position: relative;
+	top: -20px;
+}
+.k_lr {
+	border-right-style: solid;
+	border-left-style: solid;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: none;
+	border-bottom-style: none;
+	border-top-color: #615E81;
+	border-bottom-color: #615E81;
+	border-right-width: 1px;
+	border-left-width: 1px;
+	border-right-color: #615E81;
+	border-left-color: #615E81;
+}
+.k_updown {
+	border-right-style: none;
+	border-left-style: none;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #615E81;
+	border-bottom-color: #615E81;
+}
+.k_all-font {
+	border: 1px solid #615E81;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	color: #4B4E4B;
+}
+.k_noup_-35 {
+
+	border-right: 1px solid #615E81;
+	border-bottom: 1px solid #615E81;
+	border-left: 1px solid #615E81;
+	position: relative;
+	top: -56px;
+}
+.k_no_-19 {
+	position: relative;
+	top: -20px;
+	border: none;
+}
+.k_noup_-30 {
+	border-right: 1px solid #615E81;
+	border-bottom: 1px solid #615E81;
+	border-left: 1px solid #615E81;
+	position: relative;
+	top: -40px;
+	background-image: url(images/bg.gif);
+}
+.boxgray {
+	BORDER-RIGHT: #ffcc66 1px solid; BORDER-TOP: #ffcc66 1px solid; BORDER-LEFT: #ffcc66 1px solid; BORDER-BOTTOM: #ffcc66 1px solid; BACKGROUND-COLOR: #fffdf0
+}
+.biaoti30 {
+	font-size: 30px;
+	color: #FFFFFF;
+}
+.line110 {
+	LINE-HEIGHT: 17px
+}
+
+.tableborder {
+        border: 1px solid #183789; WIDTH: 100%; BACKGROUND-COLOR: #ffffff;
+}
+
+.biaoti30 {
+	FONT-WEIGHT: bold; FONT-SIZE: 30px; COLOR: white; BACKGROUND-COLOR: #4455aa;line-height: 150%
+}

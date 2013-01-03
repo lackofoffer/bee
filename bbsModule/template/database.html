@@ -1,0 +1,102 @@
+<script>
+currObj = "uuuu";
+function getActiveText(obj)
+{
+	currObj = obj;
+}
+
+function addTag(code)
+{
+	addText(code);
+}
+
+function addText(ibTag)
+{
+	var isClose = false;
+	var obj_ta = currObj;
+
+	if (obj_ta.isTextEdit)
+	{
+		obj_ta.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+
+		if((sel.type == "Text" || sel.type == "None") && rng != null)
+		{
+			rng.text = ibTag;
+		}
+
+		obj_ta.focus();
+
+		return isClose;
+	}
+	else
+		return false;
+}	
+//-->
+</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/bg.gif);
+}
+-->
+</style><title>BBS采集模块：设置导库规则 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title><table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="../login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<form action="admin.php?action=setField" method="post" name="form1" metdod="post">
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#615E81" class="k_no_-19" widtd="600"> 
+    {tables}
+    <tr bgcolor="#FFFFFF">
+      <td height="28" colspan="8" align="center" scope="row"><input name="cid" type="hidden" id="cid" value="{cid}">
+      <input name="Submit" type="submit" class="font2" value="下一步">
+      <input name="Submit2" type="reset" class="font2" value="取消"></td>
+    </tr>
+  </table>
+
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup_-19">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="images/bg2_m.gif"><img src="images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="k_noup_-19">
+  <tr>
+    <td height="28" background="images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table></form>
+

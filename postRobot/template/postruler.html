@@ -1,0 +1,164 @@
+<title>文章采集模块：模拟提交设置 小蜜蜂文章/图片/BBS/Flash采集系统 Power by DownReg.COM</title>
+<script>
+currObj = "uuuu";
+function getActiveText(obj)
+{
+	currObj = obj;
+}
+
+function addTag(code)
+{
+	addText(code);
+}
+
+function addText(ibTag)
+{
+	var isClose = false;
+	var obj_ta = currObj;
+
+	if (obj_ta.isTextEdit)
+	{
+		obj_ta.focus();
+		var sel = document.selection;
+		var rng = sel.createRange();
+		rng.colapse;
+
+		if((sel.type == "Text" || sel.type == "None") && rng != null)
+		{
+			rng.text = ibTag;
+		}
+
+		obj_ta.focus();
+
+		return isClose;
+	}
+	else
+		return false;
+}	
+//-->
+</script>
+<link href="../style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	background-image: url(../images/bg.gif);
+}
+.STYLE1 {font-weight: bold}
+-->
+</style>
+<link href="../../style.css" rel="stylesheet" type="text/css" />
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table border='0' cellpadding='1' cellspacing='1' align='center' class="tableborder">
+      <tr>
+        <td width="100%" colspan="5" align="center" nowrap="nowrap" class="biaoti30">小蜜蜂采集器(BC)：文章、BBS、Flash采集利器</td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="700"  border="0" align="center" cellpadding="0" cellspacing="0" background="../images/title_bar_middle.jpg" bgcolor="#DEDFDE">
+  <tr>
+    <td width="12" height="28"><img src="../images/title_bar_left.jpg" width="12" height="28"></td>
+    <td width="133" background="../images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="../login.php?action=system" class="font1">首　页</a></div></td>
+    <td width="7"><img src="../images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133" background="../images/title_bar_middle.jpg" bgcolor="#FFFFFF"><div align="center"><a href="../showweb.php" class="font1">站点列表</a></div></td>
+    <td width="3"><img src="../images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="../category.php" class="font1">添加站点</a></div></td>
+    <td width="3"><img src="../images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="../help.php" class="font1">使用帮助</a></div></td>
+    <td width="3"><img src="../images/title_bar_grid.jpg" width="3" height="28"></td>
+    <td width="133"><div align="center"><a href="../admin.php?action=login_out" class="font1">退出系统</a></div></td>
+    <td width="12"><img src="../images/title_bar_right.jpg" width="12" height="28"></td>
+  </tr>
+</table>
+<form action="./postdata.php?action={action}" method="post" name="form1" metdod="post">
+  <table width="700" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#615E81" class="k_no_-19">
+    <tr bgcolor="#FCFCFC">
+      <td height="8" colspan="2" align="center" scope="row"></td>
+    </tr>
+    <tr>
+      <td height="25" colspan="2" align="center" background="../images/title_bar_middle.jpg" scope="row"><span class="font1">模拟提交设置</span></td>
+    </tr>
+    <tr>
+      <td height="20" align="center" bgcolor="#EBEBEB" class="font2" scope="row">说明</td>
+      <td height="35" bgcolor="#FCFCFC"><span class="font2">本功能适合论坛及一些复杂CMS倒库使用，使用相对复杂，请尽量使用“数据库直导”功能；<br />
+      小蜜蜂官方已测试通过DEDECMS V3.01/PHP168 V3.5/PHPWind V4.3.2/Discuz! V4.1.0模拟提交。</span></td>
+    </tr>
+    <tr>
+      <td height="20" align="center" bgcolor="#EBEBEB" class="font2" scope="row">远程授权</td>
+      <td height="35" bgcolor="#FCFCFC"><span class="font2">为了避免恶意使用小蜜蜂强大的模拟提交功能，如果做远程提交，需先获取授权认证信息才能正常使用。<br />
+        <a href="http://bc.downreg.com/getlicence/" target="_blank">点此获取授权认证信息</a>，免费。</span></td>
+    </tr>
+    <tr>
+      <td width="79" height="20" align="center" bgcolor="#EBEBEB" class="font2" scope="row">站点</td>
+      <td width="612" height="20" bgcolor="#FCFCFC"> <span class="font2">&nbsp;&nbsp;&nbsp;{cname}</span>      <input name="cid" type="hidden" id="cid" value="{cid}"></td>
+    </tr>
+    <tr>
+      <td height="24" align="center" bgcolor="#EBEBEB" class="font2" scope="row">URL</td>
+      <td bgcolor="#FCFCFC">　<input name="post_url" type="text" class="k_all-font" id="post_url" value="{post_url}" size="44" />
+          <span class="font2">要提交到的目标地址</span></td>
+    </tr>
+   
+    <tr>
+      <td height="24" rowspan="3" align="center" bgcolor="#EBEBEB" class="font2" scope="row">提交值</td>
+      <td height="24" bgcolor="#FCFCFC">　<span class="font2">请按照这样的格式写 name=value 多个之间用，分开</span></td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#FCFCFC" class="font2">　可用标签：<FONT style="CURSOR: hand" onclick="addTag('[title]')"><strong>[标题] </strong></font><FONT style="CURSOR: hand" onclick="addTag('[content]')"><strong>[内容] </strong></font><FONT style="CURSOR: hand" onclick="addTag('[author]')"><strong>[作者] </strong></font><FONT style="CURSOR: hand" onclick="addTag('[sourse]')"><strong>[来源]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[time]')" alt="插入[来源]标签"><strong> [时间戳]</strong></font><FONT style="CURSOR: hand" onclick="addTag('[time1]')"><strong> [时间格式1] </strong></font><FONT style="CURSOR: hand" onclick="addTag('[time2]')"><strong>[时间格式2] </strong></font><FONT style="CURSOR: hand" onclick="addTag('[keyword]')"><strong>[关键字]</strong></font></span></td>
+    </tr>
+    <tr>
+      <td height="100" bgcolor="#FCFCFC">　<textarea name="post_data" cols="60" rows="5" class="k_all-font" id="post_data" onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{post_data}</textarea></td>
+    </tr>
+	
+  
+    <tr>
+      <td rowspan="3" align="center" bgcolor="#EBEBEB" class="font2" scope="row">COOKIE<br />
+        <br />
+      </a></td>
+      <td height="24" bgcolor="#EBEBEB">　<span class="font2">请按照这样的格式写 cookiename=cookievalue 多个之间用，分开</span>  </td>
+    </tr>
+    <tr>
+      <td height="100" bgcolor="#FCFCFC">　<textarea name="cookie" cols="60" rows="5" class="k_all-font" id="cookie"  onfocus="getActiveText(this)" onchange="getActiveText(this)" onclick="getActiveText(this)">{cookie}</textarea>      </td>
+    </tr>
+    <tr>
+      <td height="24" bgcolor="#EBEBEB"><a href="../getCookie/" target="_blank"><span class="font2">点此获得COOKIE</span></a>　<span class="font2">DedeCMS V3/PHP168/PHPWIND/DISCUZ用户请仔细阅读倒库规则说明后再操作</span></td>
+    </tr>
+    <tr bgcolor="#EBEBEB">
+      <td height="32" align="center" bgcolor="#EBEBEB" scope="row" class="font2">Reffer</td>
+      <td height="32" bgcolor="#FCFCFC" scope="row">　<input name="referer" type="text" class="k_all-font" id="referer" value="{referer}" size="44" />　</td>
+    </tr>
+    <tr bgcolor="#EBEBEB">
+      <td height="32" align="center" bgcolor="#EBEBEB" scope="row" class="font2">间隔时间</td>
+      <td height="32" bgcolor="#FCFCFC" scope="row">　<input name="post_time" type="text" id="post_time" value="{post_time}" size="1" class="k_all-font"/>        　
+        <span class="font2">间隔多长时间提交一次数据，为了避免虚拟主机IIS限制最好是5秒，0表示不限制，单位是秒</span></td>
+    </tr>
+    <tr bgcolor="#EBEBEB" background="./../images/title_bar_middle.jpg">
+      <td height="32" colspan="2" align="center" scope="row"><input name="Submit" type="submit" class="font2" value="提交">
+      <input name="Submit2" type="reset" class="font2" value="重置"></td>
+    </tr>
+  </table>
+<br />
+</form>
+<br />
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FCFCFC" class="k_noup_-35">
+  <tr>
+    <td height="80"><div align="center">
+      <table width="500" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="9" height="40" align="center" valign="middle" background="../images/bg2_l.gif">&nbsp;</td>
+          <td width="25" align="center" valign="middle" background="../images/bg2_m.gif"><img src="../images/arrow_l.gif" alt="1" width="23" height="23" /></td>
+          <td align="center" valign="middle" background="../images/bg2_m.gif" bgcolor="#FCFCFC"><div align="center" class="font2"><a href="http://bbs.downreg.com/index.php?gid=19" class="font2">BUG反馈、功能建议、使用帮助、商业合作 请访问 BC 官方技术支持论坛</a></div></td>
+          <td width="25" align="center" valign="middle" background="../images/bg2_m.gif"><img src="../images/arrow_r.gif" alt="1" width="23" height="22" /></td>
+          <td width="9" align="center" valign="middle" background="../images/bg2_r.gif">&nbsp;</td>
+        </tr>
+      </table>
+    </div></td>
+  </tr>
+</table>
+<table width="700" border="0" align="center" cellpadding="0" cellspacing="0" class="k_noup_-35">
+  <tr>
+    <td height="28" background="../images/title_bar_middle.jpg">&nbsp;</td>
+  </tr>
+</table>

@@ -1,0 +1,17 @@
+<link href="style.css" rel="stylesheet" type="text/css">
+<tr bgcolor="#FCFCFC">
+    <td height="24" colspan="3" align="center" bgcolor="#FCFCFC" class="k_all" scope="row"><span class="font2">{cname}</span></td>
+    <td height="24" colspan="1" align="center" bgcolor="#FCFCFC" class="k_all" scope="row"><a href="cleardb.php?cid={cid}" class="font2">历史记录管理</a> <a href="cleardb.php?cid={cid}&num=all&action=delete&t=l" class="font2" onclick="return confirm('确定要把本频道的所有历史记录删除');">清空历史记录</a> <a href="cleardb.php?cid={cid}&num=all&action=delete&t=u" class="font2" onclick="return confirm('确定要把本频道的所有更新记录删除');">清空更新记录</a> <a href="cleardb.php?cid={cid}&num=all&action=delete&t=m" class="font2" onclick="return confirm('确定要把本频道的所有入库记录删除');">清空入库记录</a> <a href="#" class="font2" onclick="var c;c=prompt('请输入你要修改的名称：','') ;if(c==null){return false;exit();}else if(c.length<1){alert('数字不能为空');return false;exit();}else {window.location.href='admin.php?cid={cid}&action=editChannel&newName='+c; return true;}">修改频道名称</a></td>
+  </tr>
+  <tr bgcolor="#EFEBEF">
+    <td height="24" align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">采集操作</span></td>
+    <td align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">更新记录</span></td>
+    <td align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">入库记录</span></td>
+    <td align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><a href="testcaiji.php?cid={cid}" class="font2"> 采集测试</a> <a href="clink.php?cid={cid}" class="font2">采集链接</a> <a href="cstart.php?cid={cid}" class="font2">采集内容</a> <a href="cimage.php?cid={cid}" class="font2">采集图片</a> <a href="browse.php?action=showlist&&cid={cid}" class="font2">内容浏览</a> <a href="cflash.php?cid={cid}" class="font2">采集动画</a> <a href="{link_sendpost}" class="font2">开始导库</a></td>
+  </tr>
+  <tr bgcolor="#EFEBEF" class="k_all">
+    <td width="122" height="24" align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">采集管理</span></td>
+    <td width="86" align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">{updatenum}条</span></td>
+    <td width="86" align="center" bgcolor="#EFEBEF" class="k_all" scope="row"><span class="font2">{loadnum}条</span></td>
+    <td width="442" align="center" bgcolor="#EFEBEF" class="k_all" scope="row"> <a href="ccopy.php?cid={cid}" class="font2"> 复制规则</a> <a href="cedit.php?cid={cid}" class="font2">编辑规则</a> <a href="cdelete.php?cid={cid}" class="font2" onclick="return confirm('确定要从数据库中删除该规则');">删除规则</a> <a href="sendout.php?cid={cid}" class="font2">导出规则</a> <a href="sendin.php?cid={cid}" class="font2">导入规则</a> <a href="{link_dbset}" class="font2">导库设置</a> <a href="{link_dbadmin}" class="font2">导库管理</a></td>
+  </tr>

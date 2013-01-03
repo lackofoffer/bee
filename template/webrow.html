@@ -1,0 +1,15 @@
+<link href="style.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+body {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style><tr bgcolor="#FCFCFC">
+    <td height="20" align="center" scope="row"><a href="showchannel.php?cid={cid}" target="_self" class="font2">{cname}</a></td>
+    <td height="20" align="center" class="font2" scope="row">{numoflink}条</td>
+    <td height="20" align="center" class="font2" scope="row">{numofload}条</td>
+    <td align="center" class="font2" scope="row">{channelnum}</td>
+    <td align="center" nowrap bgcolor="#FCFCFC" scope="row"><a href="admin.php?action=ruler&&cid={cid}" class="font2">添加规则</a> <a href="getweb.php?cid={cid}" class="font2">全站采集</a> <a href="cdelete.php?cid={cid}" class="font2" onclick="return confirm('确定要从数据库中删除该站点所有规则');">删除该站</a> <a href="sendout.php?cid={cid}" class="font2">导出规则</a> <a href="sendin.php?cid={cid}" class="font2">导入规则</a> <a href="#" class="font2" onclick="var c;c=prompt('请输入你要修改的名称：','') ;if(c==null){return false;exit();}else if(c.length<1){alert('数字不能为空');return false;exit();}else {window.location.href='admin.php?cid={cid}&action=editChannel&newName='+c; return true;}">修改名称</a></td>
+  </tr>
